@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -121,6 +122,9 @@ int index1, index2;
             randomCordinates();
         }
         arrayTable[index1][index2] = circle;
+        disableComputerButton();
+
+
 
         computerMoveView();
         winnerCheck();
@@ -187,9 +191,40 @@ int index1, index2;
             textView.setText("Игрок победил");
         }
     }
+
+    public void disableComputerButton(){
+        if (index1 == 0 && index2 == 0) {
+            button1.setEnabled(false);
+        }
+        else if (index1 == 0 && index2 == 1) {
+            button2.setEnabled(false);
+        }
+        else if (index1 == 0 && index2 == 2) {
+            button3.setEnabled(false);
+        }
+
+        else if (index1 == 1 && index2 == 0) {
+            button4.setEnabled(false);
+        }
+        else if (index1 == 1 && index2 == 1) {
+            button5.setEnabled(false);
+        }
+        else if (index1 == 1 && index2 == 2) {
+            button6.setEnabled(false);
+        }
+
+        else if (index1 == 2 && index2 == 0) {
+            button7.setEnabled(false);
+        }
+        else if (index1 == 2 && index2 == 1) {
+            button8.setEnabled(false);
+        }
+        else if (index1 == 2 && index2 == 2) {
+            button9.setEnabled(false);
+        }
+    }
 }
 
-//TODO: enable(false) для ходов бота.
 //TODO: текст поставить посередине.
 //TODO: случаи выигрыша бота.
 //TODO: enable(false) всех кнопок в случае выигрыша.
