@@ -3,6 +3,7 @@ package com.example.tictactoegame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -151,45 +152,156 @@ int index1, index2;
         if (button1.getText().equals("X") &&
             button2.getText().equals("X") &&
             button3.getText().equals("X")){
+
+            button1.setBackgroundColor(Color.GREEN);
+            button2.setBackgroundColor(Color.GREEN);
+            button3.setBackgroundColor(Color.GREEN);
             textView.setText("Игрок победил");
         }
         else if (button4.getText().equals("X") &&
                  button5.getText().equals("X") &&
                  button6.getText().equals("X")) {
+
+            button4.setBackgroundColor(Color.GREEN);
+            button5.setBackgroundColor(Color.GREEN);
+            button6.setBackgroundColor(Color.GREEN);
             textView.setText("Игрок победил");
         }
         else if (button7.getText().equals("X") &&
                  button8.getText().equals("X") &&
                  button9.getText().equals("X")) {
+
+            button7.setBackgroundColor(Color.GREEN);
+            button8.setBackgroundColor(Color.GREEN);
+            button9.setBackgroundColor(Color.GREEN);
             textView.setText("Игрок победил");
         }
 
         else if (button1.getText().equals("X") &&
                  button4.getText().equals("X") &&
                  button7.getText().equals("X")) {
+
+            button1.setBackgroundColor(Color.GREEN);
+            button4.setBackgroundColor(Color.GREEN);
+            button7.setBackgroundColor(Color.GREEN);
             textView.setText("Игрок победил");
         }
         else if (button2.getText().equals("X") &&
                  button5.getText().equals("X") &&
                  button8.getText().equals("X")) {
+
+            button2.setBackgroundColor(Color.GREEN);
+            button5.setBackgroundColor(Color.GREEN);
+            button8.setBackgroundColor(Color.GREEN);
             textView.setText("Игрок победил");
         }
         else if (button3.getText().equals("X") &&
                  button6.getText().equals("X") &&
                  button9.getText().equals("X")) {
+
+            button3.setBackgroundColor(Color.GREEN);
+            button6.setBackgroundColor(Color.GREEN);
+            button9.setBackgroundColor(Color.GREEN);
             textView.setText("Игрок победил");
         }
 
         else if (button1.getText().equals("X") &&
                  button5.getText().equals("X") &&
                  button9.getText().equals("X")) {
+
+            button1.setBackgroundColor(Color.GREEN);
+            button5.setBackgroundColor(Color.GREEN);
+            button9.setBackgroundColor(Color.GREEN);
             textView.setText("Игрок победил");
         }
         else if (button3.getText().equals("X") &&
                  button5.getText().equals("X") &&
                  button7.getText().equals("X")) {
+
+            button3.setBackgroundColor(Color.GREEN);
+            button5.setBackgroundColor(Color.GREEN);
+            button7.setBackgroundColor(Color.GREEN);
             textView.setText("Игрок победил");
         }
+
+
+        else if (button1.getText().equals("O") &&
+                button2.getText().equals("O") &&
+                button3.getText().equals("O")){
+
+            button1.setBackgroundColor(Color.RED);
+            button2.setBackgroundColor(Color.RED);
+            button3.setBackgroundColor(Color.RED);
+            textView.setText("Бот победил");
+        }
+        else if (button4.getText().equals("O") &&
+                button5.getText().equals("O") &&
+                button6.getText().equals("O")) {
+
+            button4.setBackgroundColor(Color.RED);
+            button5.setBackgroundColor(Color.RED);
+            button6.setBackgroundColor(Color.RED);
+            textView.setText("Бот победил");
+        }
+        else if (button7.getText().equals("O") &&
+                button8.getText().equals("O") &&
+                button9.getText().equals("O")) {
+
+            button7.setBackgroundColor(Color.RED);
+            button8.setBackgroundColor(Color.RED);
+            button9.setBackgroundColor(Color.RED);
+            textView.setText("Бот победил");
+        }
+
+        else if (button1.getText().equals("O") &&
+                button4.getText().equals("O") &&
+                button7.getText().equals("O")) {
+
+            button1.setBackgroundColor(Color.RED);
+            button4.setBackgroundColor(Color.RED);
+            button7.setBackgroundColor(Color.RED);
+            textView.setText("Бот победил");
+        }
+        else if (button2.getText().equals("O") &&
+                button5.getText().equals("O") &&
+                button8.getText().equals("O")) {
+
+            button2.setBackgroundColor(Color.RED);
+            button5.setBackgroundColor(Color.RED);
+            button8.setBackgroundColor(Color.RED);
+            textView.setText("Бот победил");
+        }
+        else if (button3.getText().equals("O") &&
+                button6.getText().equals("O") &&
+                button9.getText().equals("O")) {
+
+            button3.setBackgroundColor(Color.RED);
+            button6.setBackgroundColor(Color.RED);
+            button9.setBackgroundColor(Color.RED);
+            textView.setText("Бот победил");
+        }
+
+        else if (button1.getText().equals("O") &&
+                button5.getText().equals("O") &&
+                button9.getText().equals("O")) {
+
+            button1.setBackgroundColor(Color.RED);
+            button5.setBackgroundColor(Color.RED);
+            button9.setBackgroundColor(Color.RED);
+            textView.setText("Бот победил");
+        }
+        else if (button3.getText().equals("O") &&
+                button5.getText().equals("O") &&
+                button7.getText().equals("O")) {
+
+            button3.setBackgroundColor(Color.RED);
+            button5.setBackgroundColor(Color.RED);
+            button7.setBackgroundColor(Color.RED);
+            textView.setText("Бот победил");
+        }
+
+
+
     }
 
     public void disableComputerButton(){
@@ -225,7 +337,9 @@ int index1, index2;
     }
 }
 
-//TODO: текст поставить посередине.
 //TODO: случаи выигрыша бота.
 //TODO: enable(false) всех кнопок в случае выигрыша.
 //TODO: бот не должен ходить в случае выигрыша и игрок тоже.
+//TODO: возможность нажать на все кнопки
+//TODO: задержка между ходами.
+//TODO: отредактировать внешний вид
