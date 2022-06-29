@@ -12,6 +12,13 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/restartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="restart"
+            android:text="restart" />
+
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,22 +31,35 @@
                 <Button
                     android:id="@+id/button1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
+                    android:insetLeft="2dp"
+                    android:insetTop="2dp"
+                    android:insetRight="2dp"
+                    android:insetBottom="2dp"
                     android:onClick="touchButton1"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
+                    android:insetLeft="2dp"
+                    android:insetTop="2dp"
+                    android:insetRight="2dp"
+                    android:insetBottom="2dp"
                     android:onClick="touchButton2"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
+                    android:insetLeft="2dp"
+                    android:insetTop="2dp"
+                    android:insetRight="2dp"
+                    android:insetBottom="2dp"
                     android:onClick="touchButton3"
+                    app:backgroundTint="@color/purple_500"
                     tools:ignore="SpeakableTextPresentCheck" />
             </TableRow>
 
@@ -50,21 +70,33 @@
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
+                    android:insetLeft="2dp"
+                    android:insetTop="2dp"
+                    android:insetRight="2dp"
+                    android:insetBottom="2dp"
                     android:onClick="touchButton4"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
                     android:id="@+id/button5"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
+                    android:insetLeft="2dp"
+                    android:insetTop="2dp"
+                    android:insetRight="2dp"
+                    android:insetBottom="2dp"
                     android:onClick="touchButton5"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
                     android:id="@+id/button6"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
+                    android:insetLeft="2dp"
+                    android:insetTop="2dp"
+                    android:insetRight="2dp"
+                    android:insetBottom="2dp"
                     android:onClick="touchButton6"
                     tools:ignore="SpeakableTextPresentCheck" />
             </TableRow>
@@ -76,21 +108,33 @@
                 <Button
                     android:id="@+id/button7"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
+                    android:insetLeft="2dp"
+                    android:insetTop="2dp"
+                    android:insetRight="2dp"
+                    android:insetBottom="2dp"
                     android:onClick="touchButton7"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
                     android:id="@+id/button8"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
+                    android:insetLeft="2dp"
+                    android:insetTop="2dp"
+                    android:insetRight="2dp"
+                    android:insetBottom="2dp"
                     android:onClick="touchButton8"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
                     android:id="@+id/button9"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
+                    android:insetLeft="2dp"
+                    android:insetTop="2dp"
+                    android:insetRight="2dp"
+                    android:insetBottom="2dp"
                     android:onClick="touchButton9"
                     tools:ignore="SpeakableTextPresentCheck" />
             </TableRow>

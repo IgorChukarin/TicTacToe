@@ -11,7 +11,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-Button button1, button2, button3, button4, button5, button6, button7, button8, button9;
+Button button1, button2, button3, button4, button5, button6, button7, button8, button9, restartButton;
 TextView textView;
 String[][] arrayTable = {{"", "", ""}, {"", "", ""}, {"", "", ""}};
 String cross, circle;
@@ -31,6 +31,7 @@ int index1, index2;
         button7 = findViewById(R.id.button7);
         button8 = findViewById(R.id.button8);
         button9 = findViewById(R.id.button9);
+        restartButton = findViewById(R.id.restartButton);
         textView = findViewById(R.id.textView);
         cross = "X";
         circle = "O";
@@ -288,7 +289,7 @@ int index1, index2;
             button1.setBackgroundColor(Color.RED);
             button5.setBackgroundColor(Color.RED);
             button9.setBackgroundColor(Color.RED);
-            textView.setText("Бот победил");
+            textView.setText("you win");
         }
         else if (button3.getText().equals("O") &&
                 button5.getText().equals("O") &&
@@ -297,7 +298,7 @@ int index1, index2;
             button3.setBackgroundColor(Color.RED);
             button5.setBackgroundColor(Color.RED);
             button7.setBackgroundColor(Color.RED);
-            textView.setText("Бот победил");
+            textView.setText("game over");
         }
 
 
@@ -335,11 +336,45 @@ int index1, index2;
             button9.setEnabled(false);
         }
     }
+    public void restart(View v){
+        button1.setEnabled(true);
+        button1.setText("");
+
+        button2.setEnabled(true);
+        button2.setText("");
+
+        button3.setEnabled(true);
+        button3.setText("");
+
+        button4.setEnabled(true);
+        button4.setText("");
+
+        button5.setEnabled(true);
+        button5.setText("");
+
+        button6.setEnabled(true);
+        button6.setText("");
+
+        button7.setEnabled(true);
+        button7.setText("");
+
+        button8.setEnabled(true);
+        button8.setText("");
+
+        button9.setEnabled(true);
+        button9.setText("");
+
+        for (int i = 0; i < arrayTable.length; i++){
+            for (int j = 0; j < arrayTable[i].length; j++){
+                arrayTable[i][j] = "";
+            }
+        }
+    }
 }
 
-//TODO: случаи выигрыша бота.
 //TODO: enable(false) всех кнопок в случае выигрыша.
 //TODO: бот не должен ходить в случае выигрыша и игрок тоже.
 //TODO: возможность нажать на все кнопки
 //TODO: задержка между ходами.
 //TODO: отредактировать внешний вид
+//TODO: при restart менять цвет вссех кнопок
