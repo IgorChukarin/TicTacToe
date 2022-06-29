@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 Button button1, button2, button3, button4, button5, button6, button7, button8, button9, restartButton;
 TextView textView;
@@ -157,7 +159,7 @@ int index1, index2;
             button1.setBackgroundColor(Color.GREEN);
             button2.setBackgroundColor(Color.GREEN);
             button3.setBackgroundColor(Color.GREEN);
-            textView.setText("Игрок победил");
+            textView.setText("you win");
         }
         else if (button4.getText().equals("X") &&
                  button5.getText().equals("X") &&
@@ -166,7 +168,7 @@ int index1, index2;
             button4.setBackgroundColor(Color.GREEN);
             button5.setBackgroundColor(Color.GREEN);
             button6.setBackgroundColor(Color.GREEN);
-            textView.setText("Игрок победил");
+            textView.setText("you win");
         }
         else if (button7.getText().equals("X") &&
                  button8.getText().equals("X") &&
@@ -175,7 +177,7 @@ int index1, index2;
             button7.setBackgroundColor(Color.GREEN);
             button8.setBackgroundColor(Color.GREEN);
             button9.setBackgroundColor(Color.GREEN);
-            textView.setText("Игрок победил");
+            textView.setText("you win");
         }
 
         else if (button1.getText().equals("X") &&
@@ -185,7 +187,7 @@ int index1, index2;
             button1.setBackgroundColor(Color.GREEN);
             button4.setBackgroundColor(Color.GREEN);
             button7.setBackgroundColor(Color.GREEN);
-            textView.setText("Игрок победил");
+            textView.setText("you win");
         }
         else if (button2.getText().equals("X") &&
                  button5.getText().equals("X") &&
@@ -194,7 +196,7 @@ int index1, index2;
             button2.setBackgroundColor(Color.GREEN);
             button5.setBackgroundColor(Color.GREEN);
             button8.setBackgroundColor(Color.GREEN);
-            textView.setText("Игрок победил");
+            textView.setText("you win");
         }
         else if (button3.getText().equals("X") &&
                  button6.getText().equals("X") &&
@@ -203,7 +205,7 @@ int index1, index2;
             button3.setBackgroundColor(Color.GREEN);
             button6.setBackgroundColor(Color.GREEN);
             button9.setBackgroundColor(Color.GREEN);
-            textView.setText("Игрок победил");
+            textView.setText("you win");
         }
 
         else if (button1.getText().equals("X") &&
@@ -213,7 +215,7 @@ int index1, index2;
             button1.setBackgroundColor(Color.GREEN);
             button5.setBackgroundColor(Color.GREEN);
             button9.setBackgroundColor(Color.GREEN);
-            textView.setText("Игрок победил");
+            textView.setText("you win");
         }
         else if (button3.getText().equals("X") &&
                  button5.getText().equals("X") &&
@@ -222,7 +224,7 @@ int index1, index2;
             button3.setBackgroundColor(Color.GREEN);
             button5.setBackgroundColor(Color.GREEN);
             button7.setBackgroundColor(Color.GREEN);
-            textView.setText("Игрок победил");
+            textView.setText("you win");
         }
 
 
@@ -233,7 +235,7 @@ int index1, index2;
             button1.setBackgroundColor(Color.RED);
             button2.setBackgroundColor(Color.RED);
             button3.setBackgroundColor(Color.RED);
-            textView.setText("Бот победил");
+            textView.setText("game over");
         }
         else if (button4.getText().equals("O") &&
                 button5.getText().equals("O") &&
@@ -242,7 +244,7 @@ int index1, index2;
             button4.setBackgroundColor(Color.RED);
             button5.setBackgroundColor(Color.RED);
             button6.setBackgroundColor(Color.RED);
-            textView.setText("Бот победил");
+            textView.setText("game over");
         }
         else if (button7.getText().equals("O") &&
                 button8.getText().equals("O") &&
@@ -251,7 +253,7 @@ int index1, index2;
             button7.setBackgroundColor(Color.RED);
             button8.setBackgroundColor(Color.RED);
             button9.setBackgroundColor(Color.RED);
-            textView.setText("Бот победил");
+            textView.setText("game over");
         }
 
         else if (button1.getText().equals("O") &&
@@ -261,7 +263,7 @@ int index1, index2;
             button1.setBackgroundColor(Color.RED);
             button4.setBackgroundColor(Color.RED);
             button7.setBackgroundColor(Color.RED);
-            textView.setText("Бот победил");
+            textView.setText("game over");
         }
         else if (button2.getText().equals("O") &&
                 button5.getText().equals("O") &&
@@ -270,7 +272,7 @@ int index1, index2;
             button2.setBackgroundColor(Color.RED);
             button5.setBackgroundColor(Color.RED);
             button8.setBackgroundColor(Color.RED);
-            textView.setText("Бот победил");
+            textView.setText("game over");
         }
         else if (button3.getText().equals("O") &&
                 button6.getText().equals("O") &&
@@ -279,7 +281,7 @@ int index1, index2;
             button3.setBackgroundColor(Color.RED);
             button6.setBackgroundColor(Color.RED);
             button9.setBackgroundColor(Color.RED);
-            textView.setText("Бот победил");
+            textView.setText("game over");
         }
 
         else if (button1.getText().equals("O") &&
@@ -289,7 +291,7 @@ int index1, index2;
             button1.setBackgroundColor(Color.RED);
             button5.setBackgroundColor(Color.RED);
             button9.setBackgroundColor(Color.RED);
-            textView.setText("you win");
+            textView.setText("game over");
         }
         else if (button3.getText().equals("O") &&
                 button5.getText().equals("O") &&
@@ -337,38 +339,51 @@ int index1, index2;
         }
     }
     public void restart(View v){
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+
         button1.setEnabled(true);
         button1.setText("");
+        button1.setBackgroundColor(color);
 
         button2.setEnabled(true);
         button2.setText("");
+        button2.setBackgroundColor(color);
 
         button3.setEnabled(true);
         button3.setText("");
+        button3.setBackgroundColor(color);
 
         button4.setEnabled(true);
         button4.setText("");
+        button4.setBackgroundColor(color);
 
         button5.setEnabled(true);
         button5.setText("");
+        button5.setBackgroundColor(color);
 
         button6.setEnabled(true);
         button6.setText("");
+        button6.setBackgroundColor(color);
 
         button7.setEnabled(true);
         button7.setText("");
+        button7.setBackgroundColor(color);
 
         button8.setEnabled(true);
         button8.setText("");
+        button8.setBackgroundColor(color);
 
         button9.setEnabled(true);
         button9.setText("");
+        button9.setBackgroundColor(color);
 
         for (int i = 0; i < arrayTable.length; i++){
             for (int j = 0; j < arrayTable[i].length; j++){
                 arrayTable[i][j] = "";
             }
         }
+        textView.setText("");
     }
 }
 
@@ -376,5 +391,3 @@ int index1, index2;
 //TODO: бот не должен ходить в случае выигрыша и игрок тоже.
 //TODO: возможность нажать на все кнопки
 //TODO: задержка между ходами.
-//TODO: отредактировать внешний вид
-//TODO: при restart менять цвет вссех кнопок
