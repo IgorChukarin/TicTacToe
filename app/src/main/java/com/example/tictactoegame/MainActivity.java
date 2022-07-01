@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -123,7 +124,7 @@ boolean gameIsOn = true;
 
     public void computerMove(){
         winnerCheck();
-        if (gameIsOn == true) {
+        if (gameIsOn == true && !allButtonsTouched()) {
             randomCordinates();
             while (arrayTable[index1][index2].equals("X") ||
                     arrayTable[index1][index2].equals("O")) {
@@ -159,6 +160,7 @@ boolean gameIsOn = true;
             button2.getText().equals("X") &&
             button3.getText().equals("X")){
 
+            disableAllButtons();
             button1.setBackgroundColor(Color.GREEN);
             button2.setBackgroundColor(Color.GREEN);
             button3.setBackgroundColor(Color.GREEN);
@@ -169,6 +171,7 @@ boolean gameIsOn = true;
                  button5.getText().equals("X") &&
                  button6.getText().equals("X")) {
 
+            disableAllButtons();
             button4.setBackgroundColor(Color.GREEN);
             button5.setBackgroundColor(Color.GREEN);
             button6.setBackgroundColor(Color.GREEN);
@@ -179,6 +182,7 @@ boolean gameIsOn = true;
                  button8.getText().equals("X") &&
                  button9.getText().equals("X")) {
 
+            disableAllButtons();
             button7.setBackgroundColor(Color.GREEN);
             button8.setBackgroundColor(Color.GREEN);
             button9.setBackgroundColor(Color.GREEN);
@@ -190,6 +194,7 @@ boolean gameIsOn = true;
                  button4.getText().equals("X") &&
                  button7.getText().equals("X")) {
 
+            disableAllButtons();
             button1.setBackgroundColor(Color.GREEN);
             button4.setBackgroundColor(Color.GREEN);
             button7.setBackgroundColor(Color.GREEN);
@@ -200,6 +205,7 @@ boolean gameIsOn = true;
                  button5.getText().equals("X") &&
                  button8.getText().equals("X")) {
 
+            disableAllButtons();
             button2.setBackgroundColor(Color.GREEN);
             button5.setBackgroundColor(Color.GREEN);
             button8.setBackgroundColor(Color.GREEN);
@@ -210,6 +216,7 @@ boolean gameIsOn = true;
                  button6.getText().equals("X") &&
                  button9.getText().equals("X")) {
 
+            disableAllButtons();
             button3.setBackgroundColor(Color.GREEN);
             button6.setBackgroundColor(Color.GREEN);
             button9.setBackgroundColor(Color.GREEN);
@@ -221,6 +228,7 @@ boolean gameIsOn = true;
                  button5.getText().equals("X") &&
                  button9.getText().equals("X")) {
 
+            disableAllButtons();
             button1.setBackgroundColor(Color.GREEN);
             button5.setBackgroundColor(Color.GREEN);
             button9.setBackgroundColor(Color.GREEN);
@@ -231,6 +239,7 @@ boolean gameIsOn = true;
                  button5.getText().equals("X") &&
                  button7.getText().equals("X")) {
 
+            disableAllButtons();
             button3.setBackgroundColor(Color.GREEN);
             button5.setBackgroundColor(Color.GREEN);
             button7.setBackgroundColor(Color.GREEN);
@@ -243,6 +252,7 @@ boolean gameIsOn = true;
                 button2.getText().equals("O") &&
                 button3.getText().equals("O")){
 
+            disableAllButtons();
             button1.setBackgroundColor(Color.RED);
             button2.setBackgroundColor(Color.RED);
             button3.setBackgroundColor(Color.RED);
@@ -253,6 +263,7 @@ boolean gameIsOn = true;
                 button5.getText().equals("O") &&
                 button6.getText().equals("O")) {
 
+            disableAllButtons();
             button4.setBackgroundColor(Color.RED);
             button5.setBackgroundColor(Color.RED);
             button6.setBackgroundColor(Color.RED);
@@ -263,6 +274,7 @@ boolean gameIsOn = true;
                 button8.getText().equals("O") &&
                 button9.getText().equals("O")) {
 
+            disableAllButtons();
             button7.setBackgroundColor(Color.RED);
             button8.setBackgroundColor(Color.RED);
             button9.setBackgroundColor(Color.RED);
@@ -274,6 +286,7 @@ boolean gameIsOn = true;
                 button4.getText().equals("O") &&
                 button7.getText().equals("O")) {
 
+            disableAllButtons();
             button1.setBackgroundColor(Color.RED);
             button4.setBackgroundColor(Color.RED);
             button7.setBackgroundColor(Color.RED);
@@ -284,6 +297,7 @@ boolean gameIsOn = true;
                 button5.getText().equals("O") &&
                 button8.getText().equals("O")) {
 
+            disableAllButtons();
             button2.setBackgroundColor(Color.RED);
             button5.setBackgroundColor(Color.RED);
             button8.setBackgroundColor(Color.RED);
@@ -294,6 +308,7 @@ boolean gameIsOn = true;
                 button6.getText().equals("O") &&
                 button9.getText().equals("O")) {
 
+            disableAllButtons();
             button3.setBackgroundColor(Color.RED);
             button6.setBackgroundColor(Color.RED);
             button9.setBackgroundColor(Color.RED);
@@ -305,6 +320,7 @@ boolean gameIsOn = true;
                 button5.getText().equals("O") &&
                 button9.getText().equals("O")) {
 
+            disableAllButtons();
             button1.setBackgroundColor(Color.RED);
             button5.setBackgroundColor(Color.RED);
             button9.setBackgroundColor(Color.RED);
@@ -315,15 +331,13 @@ boolean gameIsOn = true;
                 button5.getText().equals("O") &&
                 button7.getText().equals("O")) {
 
+            disableAllButtons();
             button3.setBackgroundColor(Color.RED);
             button5.setBackgroundColor(Color.RED);
             button7.setBackgroundColor(Color.RED);
             textView.setText("game over");
             gameIsOn = false;
         }
-
-
-
     }
 
     public void disableComputerButton(){
@@ -405,11 +419,50 @@ boolean gameIsOn = true;
         textView.setText("");
         gameIsOn = true;
     }
-}
 
-//TODO: enable(false) всех кнопок в случае выигрыша.
-//TODO: Игрок не должен ходить в случае выигрыша.
-//TODO: возможность нажать на все кнопки
+    public boolean allButtonsTouched(){
+        if (arrayTable[0][0] != "" &&
+        arrayTable[0][1]  != "" &&
+        arrayTable[0][2] != "" &&
+
+        arrayTable[1][0] != "" &&
+        arrayTable[1][1] != "" &&
+        arrayTable[1][2] != "" &&
+
+        arrayTable[2][0] != "" &&
+        arrayTable[2][1] != "" &&
+        arrayTable[2][2] != "" )
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    public void disableAllButtons() {
+        int color = Color.argb(255, 191, 191, 191);
+        button1.setEnabled(false);
+        button1.setBackgroundColor(color);
+        button2.setEnabled(false);
+        button2.setBackgroundColor(color);
+        button3.setEnabled(false);
+        button3.setBackgroundColor(color);
+        button4.setEnabled(false);
+        button4.setBackgroundColor(color);
+        button5.setEnabled(false);
+        button5.setBackgroundColor(color);
+        button6.setEnabled(false);
+        button6.setBackgroundColor(color);
+        button7.setEnabled(false);
+        button7.setBackgroundColor(color);
+        button8.setEnabled(false);
+        button8.setBackgroundColor(color);
+        button9.setEnabled(false);
+        button9.setBackgroundColor(color);
+
+    }
+}
 //TODO: задержка между ходами.
 //TODO: два режима игры
+//TODO: начальный цвет - исправить
 
