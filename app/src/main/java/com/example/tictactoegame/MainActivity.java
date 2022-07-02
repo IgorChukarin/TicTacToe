@@ -40,6 +40,17 @@ boolean gameIsOn = true;
         textView = findViewById(R.id.textView);
         cross = "X";
         circle = "O";
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+        button1.setBackgroundColor(color);
+        button2.setBackgroundColor(color);
+        button3.setBackgroundColor(color);
+        button4.setBackgroundColor(color);
+        button5.setBackgroundColor(color);
+        button6.setBackgroundColor(color);
+        button7.setBackgroundColor(color);
+        button8.setBackgroundColor(color);
+        button9.setBackgroundColor(color);
     }
     ///человек
     public void touchButton1(View v){
@@ -464,5 +475,4 @@ boolean gameIsOn = true;
 }
 //TODO: задержка между ходами.
 //TODO: два режима игры
-//TODO: начальный цвет - исправить
 
