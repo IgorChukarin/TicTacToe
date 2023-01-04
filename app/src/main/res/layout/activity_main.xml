@@ -37,6 +37,10 @@
                     android:insetRight="2dp"
                     android:insetBottom="2dp"
                     android:onClick="touchButton1"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textSize="24sp"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
@@ -48,6 +52,10 @@
                     android:insetRight="2dp"
                     android:insetBottom="2dp"
                     android:onClick="touchButton2"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textSize="24sp"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
@@ -59,6 +67,9 @@
                     android:insetRight="2dp"
                     android:insetBottom="2dp"
                     android:onClick="touchButton3"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
                     app:backgroundTint="@color/purple_500"
                     tools:ignore="SpeakableTextPresentCheck" />
             </TableRow>
@@ -76,6 +87,9 @@
                     android:insetRight="2dp"
                     android:insetBottom="2dp"
                     android:onClick="touchButton4"
+                    android:textColor="#000000"
+                    android:textColorHint="#FFEB3B"
+                    android:textSize="24sp"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
@@ -87,6 +101,8 @@
                     android:insetRight="2dp"
                     android:insetBottom="2dp"
                     android:onClick="touchButton5"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
@@ -98,6 +114,8 @@
                     android:insetRight="2dp"
                     android:insetBottom="2dp"
                     android:onClick="touchButton6"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
                     tools:ignore="SpeakableTextPresentCheck" />
             </TableRow>
 
@@ -114,6 +132,8 @@
                     android:insetRight="2dp"
                     android:insetBottom="2dp"
                     android:onClick="touchButton7"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
@@ -125,6 +145,8 @@
                     android:insetRight="2dp"
                     android:insetBottom="2dp"
                     android:onClick="touchButton8"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
@@ -136,6 +158,8 @@
                     android:insetRight="2dp"
                     android:insetBottom="2dp"
                     android:onClick="touchButton9"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
                     tools:ignore="SpeakableTextPresentCheck" />
             </TableRow>
 
