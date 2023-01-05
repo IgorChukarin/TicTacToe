@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
     Button button1, button2, button3, button4, button5, button6, button7, button8, button9, restartButton;
@@ -49,74 +50,61 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void touchButton1(View v){
-        playingField[0][0] = cross;
-        button1.setText(cross);
-        button1.setEnabled(false);
-
+        Button touchedButton = button1;
+        if (v.getId() == button1.getId()) {
+            playingField[0][0] = cross;
+            touchedButton = button1;
+        }
+        else if (v.getId() == button2.getId()) {
+            playingField[0][1] = cross;
+            touchedButton = button2;
+        }
+        touchedButton.setEnabled(false);
         winnerCheck();
+        updateField();
         computerMove();
     }
-    public void touchButton2(View v){
-        playingField[0][1] = cross;
-        button2.setText(cross);
-        button2.setEnabled(false);
 
-        winnerCheck();
-        computerMove();
-    }
     public void touchButton3(View v){
         playingField[0][2] = cross;
-        button3.setText(cross);
         button3.setEnabled(false);
-
         winnerCheck();
+        updateField();
         computerMove();
     }
     public void touchButton4(View v){
         playingField[1][0] = cross;
-        button4.setText(cross);
         button4.setEnabled(false);
-
         winnerCheck();
         computerMove();
     }
     public void touchButton5(View v){
         playingField[1][1] = cross;
-        button5.setText(cross);
         button5.setEnabled(false);
-
         winnerCheck();
         computerMove();
     }
     public void touchButton6(View v){
         playingField[1][2] = cross;
-        button6.setText(cross);
         button6.setEnabled(false);
-
         winnerCheck();
         computerMove();
     }
     public void touchButton7(View v){
         playingField[2][0] = cross;
-        button7.setText(cross);
         button7.setEnabled(false);
-
         winnerCheck();
         computerMove();
     }
     public void touchButton8(View v){
         playingField[2][1] = cross;
-        button8.setText(cross);
         button8.setEnabled(false);
-
         winnerCheck();
         computerMove();
     }
     public void touchButton9(View v){
         playingField[2][2] = cross;
-        button9.setText(cross);
         button9.setEnabled(false);
-
         winnerCheck();
         computerMove();
     }
@@ -135,12 +123,12 @@ public class MainActivity extends AppCompatActivity {
             }
             playingField[index1][index2] = circle;
             disableComputerButton();
-            computerMoveView();
+            updateField();
             winnerCheck();
         }
     }
 
-    public void computerMoveView(){
+    public void updateField(){
         button1.setText(playingField[0][0]);
         button2.setText(playingField[0][1]);
         button3.setText(playingField[0][2]);
@@ -178,51 +166,35 @@ public class MainActivity extends AppCompatActivity {
             setWinningScenario(button3, button5, button7);
         }
 
-        else if (button1.getText().equals("O") &&
-                button2.getText().equals("O") &&
-                button3.getText().equals("O")){
+        else if (buttonsTextEqualsO(button1, button2, button3)){
             setLosingScenario(button1, button2, button3);
         }
-        else if (button4.getText().equals("O") &&
-                button5.getText().equals("O") &&
-                button6.getText().equals("O")) {
+        else if (buttonsTextEqualsO(button4, button5, button6)) {
             setLosingScenario(button4, button5, button6);
         }
-        else if (button7.getText().equals("O") &&
-                button8.getText().equals("O") &&
-                button9.getText().equals("O")) {
+        else if (buttonsTextEqualsO(button7, button8, button9)) {
             setLosingScenario(button7, button8, button9);
         }
-        else if (button1.getText().equals("O") &&
-                button4.getText().equals("O") &&
-                button7.getText().equals("O")) {
+        else if (buttonsTextEqualsO(button1, button4, button7)) {
             setLosingScenario(button1, button4, button7);
         }
-        else if (button2.getText().equals("O") &&
-                button5.getText().equals("O") &&
-                button8.getText().equals("O")) {
+        else if (buttonsTextEqualsO(button2, button5, button8)) {
             setLosingScenario(button2, button5, button8);
         }
-        else if (button3.getText().equals("O") &&
-                button6.getText().equals("O") &&
-                button9.getText().equals("O")) {
+        else if (buttonsTextEqualsO(button3, button6, button9)) {
             setLosingScenario(button3, button6, button9);
         }
-        else if (button1.getText().equals("O") &&
-                button5.getText().equals("O") &&
-                button9.getText().equals("O")) {
+        else if (buttonsTextEqualsO(button1, button5, button9)) {
             setLosingScenario(button1, button5, button9);
         }
-        else if (button3.getText().equals("O") &&
-                button5.getText().equals("O") &&
-                button7.getText().equals("O")) {
+        else if (buttonsTextEqualsO(button3, button5, button7)) {
             setLosingScenario(button3, button5, button7);
         }
     }
 
     public boolean buttonsTextEqualsX(Button btn1, Button btn2, Button btn3) {
-        return button1.getText().equals("X") && button2.getText().equals("X") &&
-                button3.getText().equals("X");
+        return btn1.getText().equals("X") && btn2.getText().equals("X") &&
+                btn3.getText().equals("X");
     }
 
     public void setWinningScenario(Button btn1, Button btn2, Button btn3) {
@@ -230,6 +202,11 @@ public class MainActivity extends AppCompatActivity {
         setButtonsGreen(btn1, btn2, btn3);
         textView.setText("you win");
         gameIsOn = false;
+    }
+
+    public boolean buttonsTextEqualsO(Button btn1, Button btn2, Button btn3) {
+        return btn1.getText().equals("O") && btn2.getText().equals("O") &&
+                btn3.getText().equals("O");
     }
 
     public void setLosingScenario(Button btn1, Button btn2, Button btn3) {
@@ -330,8 +307,5 @@ public class MainActivity extends AppCompatActivity {
         button3.setBackgroundColor(Color.RED);
     }
 }
-
-
-
 //TODO: задержка между ходами.
 // два режима игры
